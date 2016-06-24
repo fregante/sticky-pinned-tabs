@@ -1,0 +1,24 @@
+{
+  "name": "pinned-tab-links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "closest": "^0.0.1"
+  },
+  "author": "Federico Brigante <npm@bfred.it> (https://twitter.com/bfred_it)",
+  "license": "MIT",
+  "xo": {
+    "esnext": true,
+    "envs": [
+      "browser",
+      "webextensions"
+    ],
+    "ignores": [
+      "node_modules/**"
+    ],
+    "rules": {
+      "prefer-template": 0
+    }
+  }
+}
