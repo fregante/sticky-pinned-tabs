@@ -6,8 +6,16 @@
   "dependencies": {
     "closest": "^0.0.1"
   },
+  "devDependencies": {
+    "chrome-webstore-upload-cli": "^1.0.0",
+    "xo": "*"
+  },
   "author": "Federico Brigante <npm@bfred.it> (https://twitter.com/bfred_it)",
   "license": "MIT",
+  "scripts": {
+    "test": "xo",
+    "release": "webstore upload --source=. --auto-publish"
+  },
   "xo": {
     "esnext": true,
     "envs": [
