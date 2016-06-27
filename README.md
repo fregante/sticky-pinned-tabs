@@ -8,7 +8,7 @@ https://chrome.google.com/webstore/detail/sticky-pinned-tabs/mjlgfnggkljhiipiiog
 
 ## Firefox
 
-Untested, but you should be able to install it by loading the `manifest.json` from the page `about:debugging`
+It's technically a [Web Extension](http://arewewebextensionsyet.com/), but it doesn't work in Firefox yet. You can install it by loading the `manifest.json` from the page `about:debugging`
 
 ## Opera
 
