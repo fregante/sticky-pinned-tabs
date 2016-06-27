@@ -25,8 +25,10 @@ const html = document.documentElement;
 chrome.runtime.onMessage.addListener(message => {
 	if (!isPinned && message.event === 'pinned') {
 		html.addEventListener('click', newTabMaybe);
+		isPinned = true;
 	} else if (isPinned && message.event === 'unpinned') {
 		html.removeEventListener('click', newTabMaybe);
+		isPinned = false;
 	}
 });
 
