@@ -4,10 +4,9 @@ function updateTab(tab) {
 	});
 }
 
-chrome.tabs.onUpdated.addListener((tabId, changes, tab) => {
-	console.log(tab, changes);
+chrome.tabs.onUpdated.addListener((id, changes, tab) => {
 	if (typeof changes.pinned === 'boolean') {
-		console.info(tab.id, 'was', changes.pinned ? 'pinned' : 'unpinned');
+		console.info(id, 'was', changes.pinned ? 'pinned' : 'unpinned');
 		updateTab(tab);
 	}
 });

@@ -16,6 +16,7 @@
     },
     "background": {
         "scripts": [
+            "enable-all-current-tabs.js",
             "background.js"
         ]
     },
