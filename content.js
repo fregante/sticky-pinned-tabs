@@ -11,7 +11,7 @@ function closest(element, selector, checkYoSelf) {
 	}
 }
 
-function handleUnhandledClick(e) {
+function newTabMaybe(e) {
 	const link = closest(e.target, 'a[href]', true);
 	if (link.href.indexOf(location.protocol + '//' + location.host) < 0) {
 		window.open(link.href);
@@ -19,10 +19,15 @@ function handleUnhandledClick(e) {
 	}
 }
 
+let isPinned = false;
+const html = document.documentElement;
+
 chrome.runtime.onMessage.addListener(message => {
-	if (message.event === 'pinned') {
-		document.documentElement.addEventListener('click', handleUnhandledClick);
-	} else if (message.event === 'unpinned') {
-		document.documentElement.removeEventListener('click', handleUnhandledClick);
+	if (!isPinned && message.event === 'pinned') {
+		html.addEventListener('click', newTabMaybe);
+	} else if (isPinned && message.event === 'unpinned') {
+		html.removeEventListener('click', newTabMaybe);
 	}
 });
+
+chrome.runtime.sendMessage({event: 'pageLoad'});
