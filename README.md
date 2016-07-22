@@ -1,4 +1,4 @@
-# sticky-pinned-tabs [![Version published on Chrome Web Store](https://img.shields.io/chrome-web-store/v/mjlgfnggkljhiipiiogoengknkfocbkp.svg)](https://chrome.google.com/webstore/detail/sticky-pinned-tabs/mjlgfnggkljhiipiiogoengknkfocbkp)
+# Sticky Pinned Tabs [![Version published on Chrome Web Store](https://img.shields.io/chrome-web-store/v/mjlgfnggkljhiipiiogoengknkfocbkp.svg)](https://chrome.google.com/webstore/detail/sticky-pinned-tabs/mjlgfnggkljhiipiiogoengknkfocbkp) [![Auto deployment via travis](https://img.shields.io/badge/publishing-automated-blue.svg)](https://travis-ci.org/bfred-it/sticky-pinned-tabs)
 
 > Browser Extension: When in a pinned tab, external links open in a new tab
 
