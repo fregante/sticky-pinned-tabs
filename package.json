@@ -1,20 +1,30 @@
 {
   "name": "sticky-pinned-tabs",
-  "version": "1.0.0",
+  "version": "0.0.0",
+  "private": true,
   "description": "",
-  "main": "index.js",
+  "author": "Federico Brigante <npm@bfred.it> (https://twitter.com/bfred_it)",
+  "license": "MIT",
   "dependencies": {
-    "closest": "^0.0.1"
+    "webext-inject-on-install": "^1.0.1"
   },
   "devDependencies": {
     "chrome-webstore-upload-cli": "^1.0.0",
+    "npm-run-all": "^3.0.0",
+    "rollup": "^0.34.10",
+    "rollup-config-webext": "^1.0.1",
+    "rollup-watch": "^2.5.0",
     "xo": "*"
   },
-  "author": "Federico Brigante <npm@bfred.it> (https://twitter.com/bfred_it)",
-  "license": "MIT",
   "scripts": {
-    "test": "xo",
-    "release": "webstore upload --source=. --auto-publish"
+    "build:content": "rollup --config node:webext src/content.js --output extension/content.js",
+    "build:background": "rollup --config node:webext src/background.js --output extension/background.js",
+    "build": "run-p --silent build:*",
+    "watch:build": "run-p --silent 'build:* -- --watch'",
+    "watch:test": "onchange 'src/*.js' --initial -- xo --fix",
+    "watch": "run-p --silent watch:*",
+    "release": "webstore upload --source=extension --auto-publish",
+    "test": "xo"
   },
   "xo": {
     "esnext": true,
@@ -23,7 +33,7 @@
       "webextensions"
     ],
     "ignores": [
-      "node_modules/**"
+      "extension/**"
     ],
     "rules": {
       "prefer-template": 0

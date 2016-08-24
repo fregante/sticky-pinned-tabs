@@ -1,3 +1,5 @@
+import 'webext-inject-on-install';
+
 function updateTab(tab) {
 	chrome.tabs.sendMessage(tab.id, {
 		event: tab.pinned ? 'pinned' : 'unpinned'
