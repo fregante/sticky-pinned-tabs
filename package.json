@@ -23,7 +23,7 @@
     "watch:build": "run-p --silent 'build:* -- --watch'",
     "watch:test": "onchange 'src/*.js' --initial -- xo --fix",
     "watch": "run-p --silent watch:*",
-    "release": "webstore upload --source=extension --auto-publish",
+    "release": "npm run build && webstore upload --source=extension --auto-publish",
     "test": "xo"
   },
   "xo": {
