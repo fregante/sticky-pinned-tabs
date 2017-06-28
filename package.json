@@ -10,10 +10,10 @@
   },
   "devDependencies": {
     "chrome-webstore-upload-cli": "^1.0.0",
-    "npm-run-all": "^3.0.0",
-    "rollup": "^0.34.10",
+    "npm-run-all": "^4.0.2",
+    "rollup": "^0.43.0",
     "rollup-config-webext": "^1.0.1",
-    "rollup-watch": "^2.5.0",
+    "rollup-watch": "^4.0.0",
     "xo": "*"
   },
   "scripts": {
