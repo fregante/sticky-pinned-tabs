@@ -8,4 +8,3 @@ deploy:
   script: npm run release
   on:
     branch: master
-    tags: true

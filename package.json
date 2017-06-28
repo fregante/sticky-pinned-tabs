@@ -23,7 +23,9 @@
     "watch:build": "run-p --silent 'build:* -- --watch'",
     "watch:test": "onchange 'src/*.js' --initial -- xo --fix",
     "watch": "run-p --silent watch:*",
-    "release": "npm run build && webstore upload --source=extension --auto-publish",
+    "release-cws": "cd extension && webstore upload --auto-publish",
+    "release": "npm run build && npm run update-version && npm run release-cws",
+    "update-version": "dot-json extension/manifest.json version $(date -u +%y.%-m.%-d.%-H%M)",
     "test": "xo"
   },
   "xo": {
