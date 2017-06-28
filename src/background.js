@@ -1,4 +1,4 @@
-import 'webext-inject-on-install';
+import 'webext-inject-on-install'; // eslint-disable-line import/no-unassigned-import
 
 function updateTab(tab) {
 	chrome.tabs.sendMessage(tab.id, {
